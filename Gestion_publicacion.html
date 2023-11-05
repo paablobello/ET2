@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="./favicon.ico" type="image/vnd.microsoft.icon" />
+	<title>Javi</title>
+
+	<link rel="stylesheet" href="./css/menu.css">
+
+	<script type="text/javascript" src="./locales/textos_ES.js"></script>
+	<script type="text/javascript" src="./js_core/DOM_class.js"></script>
+	<script type="text/javascript" src="./locales/idiomas.js"></script>
+	<script type="text/javascript" src="./js_base/Gestion_Entidad.js"></script>
+	<script type="text/javascript" src="./js_app/Gestion_programas.js"></script>
+	<script type="text/javascript" src="./js_test/test.js"></script>
+	<script type="text/javascript" src="./locales/Textos_ES.js"></script>
+	<script type="text/javascript" src="./locales/idiomas.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<label for="idioma">Idioma:</label>
+	<select id="idioma" name="idioma">
+	    <option value="es">Castellano</option>
+		<option value="en">Inglés</option>
+	</select>
+
+</head>
+<body onload="DOM_class.inicializa_pagina();Gestion_programas.SEARCH();">
+	<div id="div_titulo_pagina" class="formato_titulo_pagina">
+		<p id="id_texto_titulo_tabla">pagina de prueba practica 2 iu</p>
+	</div>
+	<div><p><button onclick="test('programas');">TEST</button></p></div>
+	<div class = "div_mensajes_accion" id="div_mensajes_pagina" class="formato_mensajes_pagina">
+		<div class = "contenidomensajes_accion" >
+			<p id="texto_mensaje"></p>
+			<p onclick="DOM_class.cerrar_div_mensajes();">Cerrar</p>
+		</div>
+	</div>
+
+	<div id="id_tabla_datos">
+        
+    </div>
+	
+	<div class = "div_IU_form" id='div_IU_form'>
+		<div class = "contenidoForm" id="contenidoForm">
+			<div class = "class_titulo_form">
+				<spam class = "class_contenido_titulo_form" >titulo para el formulario de este tamano</spam>
+			</div>
+			<form id='IU_form' name='IU_form' method='POST' enctype="multipart/form-data" class="formulario">
+				
+				
+				
+			</form>
+			<br>
+			<button class="btnVolver titulo_volver" onclick="DOM_class.cerrar_div_formulario()">Volver</button>
+		</div>
+	
+	</div>
+
+</body>
+</html>

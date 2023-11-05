@@ -680,6 +680,7 @@ class Gestion_personas extends GestionEntidad{
         return true;
 
     }
+    
 
     static comprobar_poblacion_hasta_programa(){
         // validar poblacion_hasta_programa dígitos min 1 max 6

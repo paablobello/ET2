@@ -514,7 +514,6 @@ class Gestion_personas extends GestionEntidad{
         document.getElementById("IU_form").innerHTML=`
 
         <label class="dni"></label>
-
         <input type='text' id='dni' name='dni'></input>
         <div id="div_error_dni" class="errorcampo"><a id="error_dni"></a></div>
         <br>

@@ -21,14 +21,27 @@ class DOM_class{
         setLang();
     }
 
-    static mostrardivmensajeserrordebajo(id,codigoerror){
+    /*static mostrardivmensajeserrordebajo(id,codigoerror){
         //cambiar color bordes por el id
         document.getElementById('error_'+id).className = codigoerror;
         document.getElementById('error_'+id).style.color = 'red';
         document.getElementById("div_error_"+id).style.display = "block";
         DOM_class.mostrarerrorvalor(id);
         setLang();
+    }*/
+
+    static mostrardivmensajeserrordebajo(id, codigoerror) {
+        var elemento = document.getElementById(id);
+        if (elemento) {
+            elemento.className = 'error';
+            document.getElementById('error_'+id).className = codigoerror;
+            document.getElementById('error_'+id).style.color = 'red';
+            document.getElementById("div_error_"+id).style.display = "block";
+            DOM_class.mostrarerrorvalor(id);
+            setLang(); 
+        }
     }
+    
 
     static quitardivmensajeserrordebajo(id) {
         document.getElementById('error_'+id).className = '';
@@ -60,5 +73,5 @@ class DOM_class{
     static cerrar_div_test(){
         document.getElementById('div_IU_test').style.display = 'none';   
     }
-
+    
 }

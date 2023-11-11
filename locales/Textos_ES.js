@@ -31,11 +31,14 @@ let textos_ES={
     'tiempo_aplicacion_programa': 'Tiempo Aplicación Programa',
     'descrip_interp_programa': 'Descripción Interpretación Programa',
     'fichero_programa': 'Fichero Programa',
+    'nuevo_fichero_programa': 'Nuevo Fichero Programa',
     'enlace_programa': 'Enlace Programa',
     'formato_programa': 'Formato Programa',
     'modo_correccion_programa': 'Modo Corrección Programa',
     'modo_aplicacion_programa': 'Modo Aplicación Programa',
     'imagen_programa': 'Imagen Programa',
+    'nuevo_imagen_programa': 'Nuevo Imagen Programa',
+
 
 
     // label atributos programa
@@ -55,11 +58,13 @@ let textos_ES={
     'label_tiempo_aplicacion_programa': 'Introduzca Tiempo de Aplicación del Programa: ',
     'label_descrip_interp_programa': 'Introduzca Descripción e Interpretación del Programa: ',
     'label_fichero_programa': 'Introduzca Nombre del Fichero del Programa: ',
+    'label_nuevo_fichero_programa': 'Seleccione Nuevo Fichero del Programa: ',
     'label_enlace_programa': 'Introduzca Enlace del Programa: ',
     'label_formato_programa': 'Seleccione Formato del Programa: ',
     'label_modo_correccion_programa': 'Seleccione Modo de Corrección del Programa: ',
     'label_modo_aplicacion_programa': 'Seleccione Modo de Aplicación del Programa: ',
     'label_imagen_programa': 'Introduzca Nombre de la Imagen del Programa: ',
+    'label_nuevo_imagen_programa': 'Seleccione Nueva Imagen del Programa: ',
     
     
     // titulo general pagina programa
@@ -171,6 +176,9 @@ let textos_ES={
     "KO_fichero_programa_formato":"Fichero programa peta formato",
     "KO_fichero_programa_actual":"Año programa peta actual",
 
+    // nuevo_fichero_programa
+    "KO_nuevo_fichero_programa_tamano":"Nuevo fichero programa peta tamaño",
+
     // enlace_programa
     "KO_enlace_programa_tam_min":"Enlace programa peta mínimo",
     "KO_enlace_programa_tam_max":"Enlace programa peta máximo",
@@ -200,6 +208,9 @@ let textos_ES={
     "KO_imagen_programa_tam_max":"Imagen programa peta máximo",
     "KO_imagen_programa_formato":"Imagen programa peta formato",
     "KO_imagen_programa_actual":"Año programa peta actual",
+
+    // nuevo_imagen_programa
+    "KO_nuevo_imagen_programa_tamano":"Nuevo imagen programa peta tamaño",
 
 };
 

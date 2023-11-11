@@ -1,9 +1,11 @@
-/*var def_test = Array(
-    Array('1','programa','tamaño < 6',false,'tamaño minino incorrecto'),
-    Array('2','programa','tamaño > 50',false,'tamaño maximo incorrecto')
+/*
+var def_test = Array(
+  Array('personas','nombre_persona','1','tamaño < 6',false,'tamaño minino incorrecto'),
+  Array('personas','nombre_persona','2','tamaño > 50',false,'tamaño maximo incorrecto')
 );*/
 
-/*var def_test = Array(
+/*Este es el original sacado de mi ET1
+var def_test = Array(
   Array('id_programa',0,'Tamaño mayor a 6',false,'El id_programa no puede tener mas de 6 caracteres'),
   Array('id_programa',1,'Tamaño menor a 1',false,'El id_programa no puede tener menos de 1 caracter'),
   Array('id_programa',2,'Contenido diferente a digitos',false,'El id_programa solo puede contener digitos numéricos'),
@@ -88,10 +90,12 @@
   Array('imagen_programa',2,'Contenido con digitos',false,' El nombre de la imagen del programa no puede tener digitos numericos'),
   Array('imagen_programa',3,' Caracteres no permitidos',false,' El nombre de la imagen del programa solo acepta alfabéticos sin acento  sin ñ y sin espacios'),
   Array('imagen_programa',4,' alfabéticos sin acentos ni ñ ni espacios min 7 max 60',true,' Éxito')
-);*/
+);
+*/
 
 
-var def_test = Array(
+// Este es el que funciona pero esta mal respecto a la nueva de
+/*var def_test = Array(
   Array('0','programa','Tamaño mayor a 6',false,'El id_programa no puede tener mas de 6 caracteres'),
   Array('1','programa','Tamaño menor a 1',false,'El id_programa no puede tener menos de 1 caracter'),
   Array('2','programa','Contenido diferente a digitos',false,'El id_programa solo puede contener digitos numéricos'),
@@ -176,6 +180,96 @@ var def_test = Array(
   Array('81','programa','Contenido con digitos',false,'El nombre de la imagen del programa no puede tener digitos numericos'),
   Array('82','programa','Caracteres no permitidos',false,'El nombre de la imagen del programa solo acepta alfabéticos sin acento  sin ñ y sin espacios'),
   Array('83','programa',' alfabéticos sin acentos ni ñ ni espacios min 7 max 60',true,' Éxito')
-  );
+);
+*/	
 
-  
+
+
+// este es el ultimo que mofique pero no me funciona
+var def_test = Array(
+  Array('programa','id_programa',0,'Tamaño mayor a 6',false,'El id_programa no puede tener mas de 6 caracteres'),
+  Array('programa','id_programa',1,'Tamaño menor a 1',false,'El id_programa no puede tener menos de 1 caracter'),
+  Array('programa','id_programa',2,'Contenido diferente a digitos',false,'El id_programa solo puede contener digitos numéricos'),
+  Array('programa','id_programa',3,'dígitos min 1 max 6',true,'Exito'),
+  Array('programa','nombre_programa',0,'Tamaño mayor a 60',false,'El nombre_programa no puede tener mas de 60 caracteres'),
+  Array('programa','nombre_programa',1,'Tamaño menor a 6',false,'El nombre_programa no puede tener menos de 6 caracteres'),
+  Array('programa','nombre_programa',2,'Contenido con digitos',false,'El nombre_programa no puede contener digitos numéricos'),
+  Array('programa','nombre_programa',3,'Caracteres especiales',false,'El nombre_programa solo acepta alfabéticos con acento, ñ y espacios'),
+  Array('programa','nombre_programa',4,'alfabéticos con acentos, ñ y espacios min 6 max 60',true,'Exito'),
+  Array('programa','acronimo_programa',0,'Tamaño mayor a 20',false,'El acronimo_programa no puede tener mas de 20 caracteres'),
+  Array('programa','acronimo_programa',1,'Tamaño menor a 3',false,'El acronimo_programa no puede tener menos de 3 caracteres'),
+  Array('programa','acronimo_programa',2,'Contenido con digitos',false,'El acronimo_programa no puede contener digitos numéricos'),
+  Array('programa','acronimo_programa',3,'Caracteres especiales',false,'El acronimo_programa no acepta caracteres especiales ni alfabeticos con acento y con espacios'),
+  Array('programa','acronimo_programa',4,'alfabéticos sin acentos ni espacios min 3 max 20',true,'Exito'),
+  Array('programa','nombre_original_programa',0,'Tamaño mayor a 60',false,'El nombre_original_programa no puede tener mas de 60 caracteres'),
+  Array('programa','nombre_original_programa',1,'Tamaño menor a 6',false,'El nombre_programa no puede tener menos de 6 caracteres'),
+  Array('programa','nombre_original_programa',2,'Contenido con digitos',false,'El nombre_programa no puede contener digitos numéricos'),
+  Array('programa','nombre_original_programa',3,'Caracteres especiales',false,'El nombre_programa solo acepta alfabeticos con acento, ñ y espacios'),
+  Array('programa','nombre_original_programa',4,'alfabéticos con acentos, ñ y espacios min 6 max 60',true,'Exito'),
+  Array('programa','autor_programa',0,' Tamaño mayor a 50',false,' El autor_programa no puede tener más de 50 caracteres'),
+  Array('programa','autor_programa',1,' Tamaño menor a 6',false,' El autor_programa no puede tener menos de 6 caracteres'),
+  Array('programa','autor_programa',2,'Contenido con digitos',false,' El autor_programa no puede tener digitos  numericos'),
+  Array('programa','autor_programa',3,' Caracteres especiales',false,' El autor_programa solo acepta alfabéticos con acento  ñ y espacios'),
+  Array('programa','autor_programa',4,'alfabéticos con acentos, ñ y espacios min 6 max 50',true,' Éxito'),
+  Array('programa','autor_original_programa',0,' Tamaño mayor a 50',false,' El autor_original_programa no puede tener más de 50 caracteres'),
+  Array('programa','autor_original_programa',1,' Tamaño menor a 6',false,' El autor_original_programa no puede tener menos de 6 caracteres'),
+  Array('programa','autor_original_programa',2,'Contenido con digitos',false,' El autor_original_programa no puede tener digitos numericos'),
+  Array('programa','autor_original_programa',3,' Caracteres especiales',false,' El autor_original_programa solo acepta alfabéticos con acento  ñ y espacios'),
+  Array('programa','autor_original_programa',4,' alfabéticos con acentos, ñ y espacios min 6 max 50',true,' Éxito'),
+  Array('programa','ano_programa',0,' Tamaño distinto de 4',false,' El año del programa debe tener 4 dígitos'),
+  Array('programa','ano_programa',1,' Contenido diferente a dígitos',false,' El año del programa solo puede contener dígitos numéricos'),
+  Array('programa','ano_programa',2,' Año superior al actual',false,' El año del programa no puede ser superior al año actual'),
+  Array('programa','ano_programa',3,' dígitos 4 min 4 max, año no superior actual',true,' Éxito'),
+  Array('programa','ano_original_programa',0,' Tamaño distinto de 4',false,' El año original del programa debe tener 4 dígitos'),
+  Array('programa','ano_original_programa',1,' Contenido diferente a dígitos',false,' El año original del programa solo puede contener dígitos numéricos'),
+  Array('programa','ano_original_programa',2,' Año superior al actual',false,' El año original del programa no puede ser superior al año actual'),
+  Array('programa','ano_original_programa',3,' dígitos 4 min 4 max, año no superior actual',true,' Éxito'),
+  Array('programa','requisitos_programa',0,' Tamaño mayor a 300',false,' Los requisitos del programa no pueden tener más de 300 caracteres'),
+  Array('programa','requisitos_programa',1,' Tamaño menor a 6',false,' Los requisitos del programa no pueden tener menos de 6 caracteres'),
+  Array('programa','requisitos_programa',2,'Contenido con digitos',false,' Los requisitos del programa no puede tener digitos numericos'),
+  Array('programa','requisitos_programa',3,' Caracteres no permitidos',false,' Los requisitos del programa solo aceptan alfabéticos con acento ñ  espacios y signos de puntuación'),
+  Array('programa','requisitos_programa',4,' alfabéticos con acentos, ñ, espacios y signos de puntuación min 6 max 300',true,' Éxito'),
+  Array('programa','poblacion_desde_programa',0,' Tamaño mayor a 2',false,' La población desde del programa no puede tener más de 2 dígitos'),
+  Array('programa','poblacion_desde_programa',1,' Tamaño menor a 1',false,' La población desde del programa no puede tener menos de 1 dígito'),
+  Array('programa','poblacion_desde_programa',2,' Contenido diferente a dígitos',false,' La población desde del programa solo puede contener dígitos numéricos'),
+  Array('programa','poblacion_desde_programa',3,' dígitos min 1 max 2',true,' Éxito'),
+  Array('programa','poblacion_hasta_programa',0,' Tamaño mayor a 2',false,' La población hasta del programa no puede tener más de 2 dígitos'),
+  Array('programa','poblacion_hasta_programa',1,' Tamaño menor a 1',false,' La población hasta del programa no puede tener menos de 1 dígito'),
+  Array('programa','poblacion_hasta_programa',2,' Contenido diferente a dígitos',false,' La población hasta del programa solo puede contener dígitos numéricos'),
+  Array('programa','poblacion_hasta_programa',3,' dígitos min 1 max 2',true,' Éxito'),
+  Array('programa','unidad_poblacion',0,' Valor no permitido',false,' La unidad de población solo puede ser "MESES" o "AÑOS"'),
+  Array('programa','unidad_poblacion',1, ' solo valores (\'MESES\',\'AÑOS\')', false, ' Éxito'),
+  Array('programa','tipo_programa',0,' Valor no permitido',false,' El tipo de programa solo puede ser "EVALUACIÓN"  "INTERVENCIÓN" o "EVALUACIÓN E INTERVENCIÓN"'),
+  Array('programa','tipo_programa',1, ' solo valores \'EVALUACIÓN\' , \'INTERVENCIÓN\' , \'EVALUACIÓN E INTERVENCIÓN\'', true, ' Éxito'),
+  Array('programa','tiempo_aplicacion_programa',0,' Tamaño mayor a 4',false,' El tiempo de aplicación del programa no puede tener más de 4 dígitos'),
+  Array('programa','tiempo_aplicacion_programa',1,' Tamaño menor a 1',false,' El tiempo de aplicación del programa no puede tener menos de 1 dígito'),
+  Array('programa','tiempo_aplicacion_programa',2,' Contenido diferente a dígitos',false,' El tiempo de aplicación del programa solo puede contener dígitos numéricos'),
+  Array('programa','tiempo_aplicacion_programa',3,' dígitos min 1 max 4',true,' Éxito'),
+  Array('programa','descrip_interp_programa',0,' Tamaño mayor a 5000',false,' La descripción e interpretación del programa no puede tener más de 5000 caracteres'),
+  Array('programa','descrip_interp_programa',1,' Tamaño menor a 100',false,' La descripción e interpretación del programa no puede tener menos de 100 caracteres'),
+  Array('programa','descrip_interp_programa',2,'Contenido con digitos',false,' La descripción e interpretación del programa no puede tener digitos numericos'),
+  Array('programa','descrip_interp_programa',3,' Caracteres no permitidos',false,' La descripción e interpretación del programa solo acepta alfabéticos con acento ñ espacios  signos de puntuación y retornos de carro'),
+  Array('programa','descrip_interp_programa',4,' alfabéticos con acentos, ñ, espacios, signos de puntuación y retornos de carro min 100 max 5000',true,' Éxito'),
+  Array('programa','fichero_programa',0,' Tamaño mayor a 60',false,' El nombre del fichero del programa no puede tener más de 60 caracteres'),
+  Array('programa','fichero_programa',1,' Tamaño menor a 7',false,' El nombre del fichero del programa no puede tener menos de 7 caracteres'),
+  Array('programa','fichero_programa',2,'Contenido con digitos',false,' El nombre del fichero del programa no puede tener digitos numericos'),
+  Array('programa','fichero_programa',3,' Caracteres no permitidos',false,' El nombre del fichero del programa solo acepta alfabéticos sin acento  sin ñ y sin espacios'),
+  Array('programa','fichero_programa',4,' alfabéticos sin acentos ni ñ ni espacios min 7 max 60',true,' Éxito'),
+  Array('programa','enlace_programa',0,' Tamaño mayor a 100',false,' El enlace del programa no puede tener más de 100 caracteres'),
+  Array('programa','enlace_programa',1,' Tamaño menor a 10',false,' El enlace del programa no puede tener menos de 10 caracteres'),
+  Array('programa','enlace_programa',2,'Contenido con dígitos',false,' El enlace del programa no puede tener dígitos numéricos'),
+  Array('programa','enlace_programa',3,' Caracteres no permitidos',false,' El enlace del programa solo acepta alfabéticos ":"  "/" y "." sin acentos  ñ ni espacios'),
+  Array('programa','enlace_programa',4,' alfabéticos y : y / y . sin acentos ni ñ ni espacios min 10 max 100',true,' Éxito'),
+  Array('programa','formato_programa',0,' Valor no permitido',false,' El formato del programa solo puede ser "PAPEL"  "ELECTRÓNICO" o "PAPEL Y ELECTRÓNICO"'),
+  Array('programa','formato_programa', 1, ' solo valores (\'PAPEL\', \'ELECTRÓNICO\',\'PAPEL Y ELECTRÓNICO\')', true, ' Éxito'),
+  Array('programa','modo_correccion_programa',0,' Valor no permitido',false,' El modo de corrección del programa solo puede ser "PAPEL"  "ELECTRÓNICO" o "PAPEL Y ELECTRÓNICO"'),
+  Array('programa','modo_correccion_programa', 1, ' solo valores (\'PAPEL\', \'ELECTRÓNICO\',\'PAPEL Y ELECTRÓNICO\')', true, ' Éxito'),
+  Array('programa','modo_aplicacion_programa',0,' Valor no permitido',false,' El modo de aplicación del programa solo puede ser "INDIVIDUAL"  "COLECTIVO" o "INDIVIDUAL Y COLECTIVO"'),
+  Array('programa','modo_aplicacion_programa', 1, ' solo valores \'INDIVIDUAL\',\'COLECTIVO\',\'INDIVIDUAL Y COLECTIVO\'', true, ' Éxito'),
+  Array('programa','imagen_programa',0,' Tamaño mayor a 60',false,' El nombre de la imagen del programa no puede tener más de 60 caracteres'),
+  Array('programa','imagen_programa',1,' Tamaño menor a 7',false,' El nombre de la imagen del programa no puede tener menos de 7 caracteres'),
+  Array('programa','imagen_programa',2,'Contenido con dígitos',false,' El nombre de la imagen del programa no puede tener dígitos numéricos'),
+  Array('programa','imagen_programa',3,' Caracteres no permitidos',false,' El nombre de la imagen del programa solo acepta alfabéticos sin acento  sin ñ y sin espacios'),
+  Array('programa','imagen_programa',4,' alfabéticos sin acentos ni ñ ni espacios min 7 max 60',true,' Éxito')
+);
+

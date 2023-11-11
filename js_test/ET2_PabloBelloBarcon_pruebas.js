@@ -1,12 +1,15 @@
-/*var pruebasunitarias = Array(
-    Array('1','programa','nombre_programa','1','aa',false),
-    Array('1','programa','nombre_programa','2','aaaaaaa',true),
-    Array('1','programa','nombre_programa','3','aaaaaaa',false),
-    Array('2','programa','nombre_programa','4','aa'.repeat(100),false),
-    Array('2','programa','nombre_programa','5','aaaaaaa',true),
-    Array('2','programa','nombre_programa','6','aa'.repeat(100),true),
-    // Array('2','publicacion','nombre_programa','7','aa'.repeat(100),true),
-);*/
+/*
+var pruebasunitarias = Array(
+    Array('1','personas','nombre_persona','1','aa',false),
+    Array('1','personas','nombre_persona','2','aaaaaaa',true),
+    Array('1','personas','nombre_persona','3','aaaaaaa',false),
+    Array('2','personas','nombre_persona','4','aa'.repeat(100),false),
+    Array('2','personas','nombre_persona','5','aaaaaaa',true),
+    Array('2','personas','nombre_persona','6','aa'.repeat(100),true),
+    Array('2','publicacion','nombre_publicacion','7','aa'.repeat(100),true),
+);
+*/
+
 
 var pruebasunitarias = Array(
     Array(0, 'programa', 'id_programa', 0, '12345678', false),
@@ -178,4 +181,5 @@ var pruebasunitarias = Array(
     Array(4, 'programa', 'imagen_programa', 124, 'imagen@.jpg', false),
     Array(4, 'programa', 'imagen_programa', 125, 'imagen.jpg', true)
 );
+
 

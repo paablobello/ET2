@@ -85,7 +85,7 @@ class Gestion_programa extends GestionEntidad{
         document.getElementById('modo_aplicacion_programa').value = '';
 
         // document.getElementById('imagen_programa').setAttribute('onblur','Gestion_programa.comprobar_imagen_programa()');
-        document.getElementById('imagen_programa').style.display = 'none';        document.getElementById('imagen_programa').style.display = 'none';
+        document.getElementById('imagen_programa').style.display = 'none';       
         document.getElementById('label_imagen_programa').style.display = 'none';
         document.getElementById('link_imagen_programa').style.display = 'none';
 
@@ -106,6 +106,100 @@ class Gestion_programa extends GestionEntidad{
         // se muestra el formulario
         document.getElementById('div_IU_form').style.display = 'block';
     }
+
+    /*
+    static async createForm_ADD(){
+
+        // resetear el formulario
+        //this.resetearformprograma();
+        this.recargarform();
+        // rellenar titulo formulario
+        
+        document.querySelector(".class_contenido_titulo_form").innerHTML = traduccion["titulo_form_ADD_programa"]; 
+
+        // se rellena el action del formulario
+        document.getElementById('IU_form').action = 'javascript:Gestion_programa.ADD();';
+        document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_programa.comprobar_submit();');
+
+        // se coloca el onblur del id_programa y se pone a vacio el valor (o podriamos hacerlo en el resetearformusuario())
+        document.getElementById('id_programa').setAttribute('onblur', 'Gestion_programa.comprobar_id_programa()');
+        document.getElementById('id_programa').value = '';
+
+        // se coloca el onblur del nombre y se pone a vacio el valor (o podriamos hacerlo en el resetearformusuario())
+        document.getElementById('nombre_programa').setAttribute('onblur', 'Gestion_programa.comprobar_nombre_programa()');
+        document.getElementById('nombre_programa').value = '';
+
+        document.getElementById('acronimo_programa').setAttribute('onblur', 'Gestion_programa.comprobar_acronimo_programa()');
+        document.getElementById('acronimo_programa').value = '';
+
+        document.getElementById('nombre_original_programa').setAttribute('onblur','Gestion_programa.comprobar_nombre_original_programa()');
+        document.getElementById('nombre_original_programa').value = '';
+
+        document.getElementById('autor_programa').setAttribute('onblur','Gestion_programa.comprobar_autor_programa()');
+        document.getElementById('autor_programa').value = '';
+
+        document.getElementById('autor_original_programa').setAttribute('onblur','Gestion_programa.comprobar_autor_original_programa()');
+        document.getElementById('autor_original_programa').value = '';
+
+        document.getElementById('ano_programa').setAttribute('onchange','Gestion_programa.comprobar_ano_programa()');
+        document.getElementById('ano_programa').value = '';
+
+        document.getElementById('ano_original_programa').setAttribute('onchange','Gestion_programa.comprobar_ano_original_programa()');
+        document.getElementById('ano_original_programa').value = '';
+
+        document.getElementById('requisitos_programa').setAttribute('onblur','Gestion_programa.comprobar_requisitos_programa()');
+        document.getElementById('requisitos_programa').value = '';
+
+        document.getElementById('poblacion_desde_programa').setAttribute('onblur','Gestion_programa.comprobar_poblacion_desde_programa()');
+        document.getElementById('poblacion_desde_programa').value = '';
+
+        document.getElementById('poblacion_hasta_programa').setAttribute('onblur','Gestion_programa.comprobar_poblacion_hasta_programa()');
+        document.getElementById('poblacion_hasta_programa').value = '';
+
+        document.getElementById('unidad_poblacion').setAttribute('onblur','Gestion_programa.comprobar_unidad_poblacion()');
+        document.getElementById('unidad_poblacion').value = '';
+        
+        document.getElementById('tipo_programa').setAttribute('onblur','Gestion_programa.comprobar_tipo_programa()');
+        document.getElementById('tipo_programa').value = '';
+
+        document.getElementById('tiempo_aplicacion_programa').setAttribute('onblur','Gestion_programa.comprobar_tiempo_aplicacion_programa()');
+        document.getElementById('tiempo_aplicacion_programa').value = '';
+
+        document.getElementById('descrip_interp_programa').setAttribute('onblur','Gestion_programa.comprobar_descrip_interp_programa()');
+        document.getElementById('descrip_interp_programa').value = '';
+
+        document.getElementById('fichero_programa').setAttribute('onblur','Gestion_programa.comprobar_fichero_programa()');
+        document.getElementById('fichero_programa').value = '';
+
+        document.getElementById('enlace_programa').setAttribute('onblur','Gestion_programa.comprobar_enlace_programa()');
+        document.getElementById('enlace_programa').value = '';
+
+        document.getElementById('formato_programa').setAttribute('onblur','Gestion_programa.comprobar_formato_programa()');
+        document.getElementById('formato_programa').value = '';
+
+        document.getElementById('modo_correccion_programa').setAttribute('onblur','Gestion_programa.comprobar_modo_correccion_programa()');
+        document.getElementById('modo_correccion_programa').value = '';
+
+        document.getElementById('modo_aplicacion_programa').setAttribute('onblur','Gestion_programa.comprobar_modo_aplicacion_programa()');
+        document.getElementById('modo_aplicacion_programa').value = '';
+
+        document.getElementById('imagen_programa').setAttribute('onblur','Gestion_programa.comprobar_imagen_programa()');
+        document.getElementById('imagen_programa').value = '';
+
+        let botonadd = document.createElement('button');
+        botonadd.type = 'submit';
+        let imgadd = document.createElement('img');
+        imgadd.src = './iconos/ADD.png';
+        botonadd.append(imgadd);
+        document.getElementById('IU_form').append(botonadd);        
+
+        // para actualizar idioma despues de incluir la imagen
+        setLang();
+
+        // se muestra el formulario
+        document.getElementById('div_IU_form').style.display = 'block';
+    }*/
+
 
     static createForm_EDIT(datostupla) {
 
@@ -258,7 +352,7 @@ class Gestion_programa extends GestionEntidad{
 
     
         // se rellena el action del formulario
-        document.getElementById('IU_form').action = 'javascript:Gestion_programas.DELETE();';
+        document.getElementById('IU_form').action = 'javascript:Gestion_programa.DELETE();';
     
         // se coloca el onblur de cada campo y se pone a vacío el valor
         document.getElementById('id_programa').value = datostupla.id_programa;
@@ -432,7 +526,7 @@ class Gestion_programa extends GestionEntidad{
     //-----------------------------------------------------------------------------
     // submits
 
-    static comprobar_submit(){
+    /*static comprobar_submit(){
 
         let valor = this.comprobar_id_programa();
         let valor1 = this.comprobar_nombre_programa();
@@ -450,13 +544,66 @@ class Gestion_programa extends GestionEntidad{
         let valor13 = this.comprobar_tiempo_aplicacion_programa();
         let valor14 = this.comprobar_descrip_interp_programa();
         // let valor15 = this.comprobar_fichero_programa();
-        let valor15 = this.comprobar_enlace_programa();
-        let valor16 = this.comprobar_formato_programa();
-        let valor17 = this.comprobar_modo_correccion_programa();
-        let valor18 = this.comprobar_modo_aplicacion_programa();
+        let valor15 = this.comprobar_nuevo_fichero_programa();
+        let valor16 = this.comprobar_enlace_programa();
+        let valor17 = this.comprobar_formato_programa();
+        let valor18 = this.comprobar_modo_correccion_programa();
+        let valor19 = this.comprobar_modo_aplicacion_programa();
         // let valor20 = this.comprobar_imagen_programa();
-        let valor19 = this.comprobar_nuevo_imagen_programa();
-        let valor20 = this.comprobar_nuevo_fichero_programa();
+        let valor20 = this.comprobar_nuevo_imagen_programa();
+        //let valor20 = this.comprobar_nuevo_fichero_programa();
+    
+        let resultado = (
+            valor &&
+            valor1 &&
+            valor2 &&
+            valor3 &&
+            valor4 &&
+            valor5 &&
+            valor6 &&
+            valor7 &&
+            valor8 &&
+            valor9 &&
+            valor10 &&
+            valor11 &&
+            valor12 &&
+            valor13 &&
+            valor14 &&
+            valor15 &&
+            valor16 &&
+            valor17 &&
+            valor18 &&
+            valor19 &&
+            valor20
+        );
+    
+        return resultado;
+    }*/
+
+
+    static comprobar_submit(){
+
+        let valor = this.comprobar_id_programa();
+        let valor1 = this.comprobar_nombre_programa();
+        let valor2 = this.comprobar_acronimo_programa();
+        let valor3 = this.comprobar_nombre_original_programa();
+        let valor4 = this.comprobar_autor_programa();
+        let valor5 = this.comprobar_autor_original_programa();
+        let valor6 = this.comprobar_ano_programa();
+        let valor7 = this.comprobar_ano_original_programa();
+        let valor8 = this.comprobar_requisitos_programa();
+        let valor9 = this.comprobar_poblacion_desde_programa();
+        let valor10 = this.comprobar_poblacion_hasta_programa();
+        let valor11 = this.comprobar_unidad_poblacion();
+        let valor12 = this.comprobar_tipo_programa();
+        let valor13 = this.comprobar_tiempo_aplicacion_programa();
+        let valor14 = this.comprobar_descrip_interp_programa();
+        let valor15 = this.comprobar_fichero_programa();
+        let valor16 = this.comprobar_enlace_programa();
+        let valor17 = this.comprobar_formato_programa();
+        let valor18 = this.comprobar_modo_correccion_programa();
+        let valor19 = this.comprobar_modo_aplicacion_programa();
+        let valor20 = this.comprobar_imagen_programa();
     
         let resultado = (
             valor &&
@@ -484,7 +631,8 @@ class Gestion_programa extends GestionEntidad{
     
         return resultado;
     }
-
+    
+    
     static comprobar_submit_SEARCH(){
 
         let valor = this.comprobar_id_programa_SEARCH();
@@ -1314,14 +1462,14 @@ class Gestion_programa extends GestionEntidad{
     }
 
     static comprobar_nuevo_fichero_programa(){
-        /*if(validacionesatomicas.tamano_fichero('nuevo_fichero_programa')){
+        if(validacionesatomicas.tamano_fichero('nuevo_fichero_programa')){
         }
         else{
              DOM_class.mostrardivmensajeserrordebajo('nuevo_fichero_programa','KO_nuevo_fichero_programa_tamano');
              return false;
         }
         
-        DOM_class.mostrarexitovalor('nuevo_fichero_programa');*/
+        DOM_class.mostrarexitovalor('nuevo_fichero_programa');
         return true;
 
     }
@@ -1425,6 +1573,7 @@ class Gestion_programa extends GestionEntidad{
     static comprobar_modo_aplicacion_programa_SEARCH(){
         return true;
     }
+    
 
     static comprobar_imagen_programa(){
 
@@ -1626,10 +1775,13 @@ class Gestion_programa extends GestionEntidad{
         <label id="label_imagen_programa" class="label_imagen_programa">Foto Persona</label>
         <input type='text' id='imagen_programa' name='imagen_programa'></input>
         <a id="link_imagen_programa" href="http://193.147.87.202/ET2/filesuploaded/files_imagen_programa/"><img src="./iconos/FILE.png" /></a>
+
         <label id="label_nuevo_imagen_programa" class="label_nuevo_imagen_programa">Nueva Imagen Programa</label>
         <input type="file" id="nuevo_imagen_programa" name="nuevo_imagen_programa">
         <div id="div_error_nuevo_imagen_programa" class="errorcampo"><a id="error_nuevo_imagen_programa"></a></div>
         <br>
+
+      
 
         `;
 
@@ -1639,6 +1791,8 @@ class Gestion_programa extends GestionEntidad{
          *   <label class="imagen_programa">Nombre de la Imagen del Programa</label>
             <input type='text' id='imagen_programa' name='imagen_programa'></input>
             <div id="div_error_imagen_programa" class="errorcampo"><a id="error_imagen_programa"></a></div>
+
+              
         */
 
         //obtener campos del formulario

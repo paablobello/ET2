@@ -90,26 +90,17 @@ class validacionesatomicas{
         }
     }
     
-    // funcion para validar formato de fichero_programa solo con alfabéticos sin acentos ni ñ ni espacios min 7 max 60. Solo pdf, doc o docx
-    static fichero_programa(id){
-        var patron = /^[a-zA-Z]+\.(pdf|doc|docx)$/i;
-        if (patron.test(document.getElementById(id).value)){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
 
     // funcion para comprobar que el tamaño de fichero menor de 2000000 bytes
     static tamano_fichero(id) {
         const elemento = document.getElementById(id);
     
         if (elemento && elemento.files && elemento.files[0]) {
-            return elemento.files[0].size > 200000;
-        }
+            return elemento.files[0].size <= 2000000;
+        } else{
     
         return false;
+        }
     }
     
 
@@ -129,10 +120,11 @@ class validacionesatomicas{
         const elemento = document.getElementById(id);
     
         if (elemento && elemento.files && elemento.files[0]) {
-            return elemento.files[0].size > 20000;
-        }
+            return elemento.files[0].size <= 200000;
+        }else{
     
         return false;
+    }
     }
         
     /*
@@ -157,9 +149,21 @@ class validacionesatomicas{
         }
     }
 
+    // funcion para validar formato de fichero_programa solo con alfabéticos sin acentos ni ñ ni espacios min 7 max 60. Solo pdf, doc o docx
+    static fichero_programa(id){
+        var patron = /^[a-zA-Z]+\.(pdf|doc|docx)$/i;
+        if (patron.test(document.getElementById(id).value)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
     // funcion para validar imagen_programa solo alfabéticos sin acentos ni ñ ni espacios solo jpg o jpeg
     static imagen_programa(id){
-        var patron = /^[A-Za-z]+\.(jpg|jpeg)$/;
+        var patron = /^[A-Za-z]+\.(jpg|jpeg)$/i;
         if (patron.test(document.getElementById(id).value)){
             return true;
         }

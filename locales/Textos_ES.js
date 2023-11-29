@@ -212,6 +212,97 @@ let textos_ES={
     // nuevo_imagen_programa
     "KO_nuevo_imagen_programa_tamano":"Nuevo imagen programa peta tamaño",
 
+
+
+
+
+
+
+
+
+
+
+// TABLA PUBLICACION
+
+// atributos publicacion (usados en el titulo de la tabla de presentación de datos)
+
+    'id_publicacion': 'Id Publicación',
+    'titulo_publicacion': 'Título Publicación',
+    'autor_publicacion': 'Autor Publicación',
+    'fecha_publicacion': 'Fecha Publicación',
+    'area_publicacion': 'Área Publicación',
+    'texto_publicacion': 'Texto Publicación',
+    'imagen_publicacion': 'Imagen Publicación',
+    'nuevo_imagen_publicacion': 'Nuevo Imagen Publicación',
+
+
+// label atributos publicacion
+    'label_id_publicacion': 'Introduzca ID de la Publicación: ',
+    'label_titulo_publicacion': 'Introduzca Título de la Publicación: ',
+    'label_autor_publicacion': 'Introduzca Autor de la Publicación: ',
+    'label_fecha_publicacion': 'Introduzca Fecha de la Publicación: ',
+    'label_area_publicacion': 'Introduzca Área de la Publicación: ',
+    'label_texto_publicacion': 'Introduzca Texto de la Publicación: ',
+    'label_imagen_publicacion': 'Introduzca Nombre de la Imagen de la Publicación: ',
+    'label_nuevo_imagen_publicacion': 'Seleccione Nueva Imagen de la Publicación: ',
+
+// titulo general pagina publicacion
+    'titulo_pagina_programas' : 'Gestión de Publicaciones',
+
+// titulos formularios acciones publicacion
+
+    "titulo_form_ADD_publicacion": "Incorporar una publicación",
+    "titulo_form_EDIT_publicacion": "Modificar publicación",
+    "titulo_form_DELETE_publicacion": "Confirmar borrar una publicación",
+    "titulo_form_SEARCH_publicacion": "Buscar una publicación",
+    "titulo_form_SHOWCURRENT_publicacion": "Ver detalle de una publicación",
+
+
+// errores de formato de publicacion en front
+    // id_publicacion
+    "KO_id_publicacion_tam_min": "Id publicación peta mínimo",
+    "KO_id_publicacion_tam_max": "Id publicación peta máximo",
+    "KO_id_publicacion_formato": "Id publicación peta formato",
+    "KO_id_publicacion_actual": "Año publicación peta actual",
+
+    // titulo_publicacion
+    "KO_titulo_publicacion_tam_min": "Título publicación peta mínimo",
+    "KO_titulo_publicacion_tam_max": "Título publicación peta máximo",
+    "KO_titulo_publicacion_formato": "Título publicación peta formato",
+    "KO_titulo_publicacion_actual": "Año publicación peta actual",
+
+    // autor_publicacion
+    "KO_autor_publicacion_tam_min": "Autor publicación peta mínimo",
+    "KO_autor_publicacion_tam_max": "Autor publicación peta máximo",
+    "KO_autor_publicacion_formato": "Autor publicación peta formato",
+    "KO_autor_publicacion_actual": "Año publicación peta actual",
+
+    // fecha_publicacion
+    "KO_fecha_publicacion_tam_min": "Fecha publicación peta mínimo",
+    "KO_fecha_publicacion_tam_max": "Fecha publicación peta máximo",
+    "KO_fecha_publicacion_formato": "Fecha publicación peta formato",
+    "KO_fecha_publicacion_actual": "Año publicación peta actual",
+
+    // area_publicacion
+    "KO_area_publicacion_tam_min": "Área publicación peta mínimo",
+    "KO_area_publicacion_tam_max": "Área publicación peta máximo",
+    "KO_area_publicacion_formato": "Área publicación peta formato",
+    "KO_area_publicacion_actual": "Año publicación peta actual",
+
+    // texto_publicacion
+    "KO_texto_publicacion_tam_min": "Texto publicación peta mínimo",
+    "KO_texto_publicacion_tam_max": "Texto publicación peta máximo",
+    "KO_texto_publicacion_formato": "Texto publicación peta formato",
+    "KO_texto_publicacion_actual": "Año publicación peta actual",
+
+    // imagen_publicacion
+    "KO_imagen_publicacion_tam_min": "Imagen publicación peta mínimo",
+    "KO_imagen_publicacion_tam_max": "Imagen publicación peta máximo",
+    "KO_imagen_publicacion_formato": "Imagen publicación peta formato",
+    "KO_imagen_publicacion_actual": "Año publicación peta actual",
+
+    // nuevo_imagen_publicacion
+    "KO_nuevo_imagen_publicacion_tamano": "Nuevo imagen publicación peta tamaño",
 };
 
 

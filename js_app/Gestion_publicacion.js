@@ -36,12 +36,11 @@ class Gestion_publicacion extends GestionEntidad{
         document.getElementById('texto_publicacion').setAttribute('onblur','Gestion_publicacion.comprobar_texto_publicacion()');
         document.getElementById('texto_publicacion').value = '';
     
-        // document.getElementById('imagen_publicacion').setAttribute('onblur','Gestion_publicacion.comprobar_imagen_publicacion()');
         document.getElementById('imagen_publicacion').style.display = 'none';       
         document.getElementById('label_imagen_publicacion').style.display = 'none';
         document.getElementById('link_imagen_publicacion').style.display = 'none';
     
-        document.getElementById('nuevo_imagen_publicacion').setAttribute('onblur','Gestion_publicacion.comprobar_nuevo_imagen_publicacion()');
+        document.getElementById('nuevo_imagen_publicacion').setAttribute('onchange','Gestion_publicacion.comprobar_nuevo_imagen_publicacion()');
         document.getElementById('nuevo_imagen_publicacion').style.display = 'block';
     
         // Crear botón de adición
@@ -83,7 +82,7 @@ class Gestion_publicacion extends GestionEntidad{
         document.getElementById('texto_publicacion').setAttribute('onblur', 'Gestion_publicacion.comprobar_texto_publicacion()');
         document.getElementById('imagen_publicacion').setAttribute('readonly', true);
         document.getElementById('link_imagen_publicacion').setAttribute('href', 'http://193.147.87.202/ET2/filesuploaded/files_imagen_publicacion/' + datostupla.imagen_publicacion);
-        document.getElementById('nuevo_imagen_publicacion').setAttribute('onblur', 'Gestion_publicacion.comprobar_nuevo_imagen_publicacion()');
+        document.getElementById('nuevo_imagen_publicacion').setAttribute('onchange', 'Gestion_publicacion.comprobar_nuevo_imagen_publicacion()');
     
         // Rellenar los campos con los valores recibidos
         document.getElementById('titulo_publicacion').value = datostupla.titulo_publicacion;
@@ -203,7 +202,7 @@ class Gestion_publicacion extends GestionEntidad{
         document.getElementById('area_publicacion').setAttribute('onblur', 'Gestion_publicacion.comprobar_area_publicacion_SEARCH()');
         document.getElementById('texto_publicacion').setAttribute('onblur', 'Gestion_publicacion.comprobar_texto_publicacion_SEARCH()');
     
-        document.getElementById('imagen_publicacion').setAttribute('readonly', true);
+        document.getElementById('imagen_publicacion').setAttribute('onblur', 'Gestion_publicacion.comprobar_imagen_publicacion_SEARCH()');
         document.getElementById('link_imagen_publicacion').style.display = 'none';
         document.getElementById('label_nuevo_imagen_publicacion').style.display = 'none';
         document.getElementById('nuevo_imagen_publicacion').style.display = 'none';
@@ -234,8 +233,7 @@ class Gestion_publicacion extends GestionEntidad{
         let valor3 = this.comprobar_fecha_publicacion();
         let valor4 = this.comprobar_area_publicacion();
         let valor5 = this.comprobar_texto_publicacion();
-        let valor6 = this.comprobar_imagen_publicacion();
-        let valor7 = this.comprobar_nuevo_imagen_publicacion();
+        let valor6 = this.comprobar_nuevo_imagen_publicacion();
     
         let resultado = (
             valor &&
@@ -244,8 +242,7 @@ class Gestion_publicacion extends GestionEntidad{
             valor3 &&
             valor4 &&
             valor5 &&
-            valor6 &&
-            valor7
+            valor6
         );
     
         return resultado;
@@ -261,7 +258,6 @@ class Gestion_publicacion extends GestionEntidad{
         let valor4 = this.comprobar_area_publicacion_SEARCH();
         let valor5 = this.comprobar_texto_publicacion_SEARCH();
         let valor6 = this.comprobar_imagen_publicacion_SEARCH();
-        let valor7 = this.comprobar_nuevo_imagen_publicacion();
     
         let resultado = (
             valor &&
@@ -270,8 +266,7 @@ class Gestion_publicacion extends GestionEntidad{
             valor3 &&
             valor4 &&
             valor5 &&
-            valor6 &&
-            valor7
+            valor6
         );
     
         return resultado;
@@ -460,10 +455,12 @@ class Gestion_publicacion extends GestionEntidad{
 
 
     static comprobar_fecha_publicacion() {
-    return true;
+        DOM_class.mostrarexitovalor('fecha_publicacion');
+        return true;
     }
 
     static comprobar_fecha_publicacion_SEARCH() {
+        DOM_class.mostrarexitovalor('fecha_publicacion');
         return true;
     }
 
@@ -508,7 +505,6 @@ class Gestion_publicacion extends GestionEntidad{
         return true;
     }
 
-    // texto_publicacion Cualquier ascii min 30 max 8000
 
     static comprobar_texto_publicacion(){
 
@@ -549,11 +545,9 @@ class Gestion_publicacion extends GestionEntidad{
         return true;
     }
     
-
     
     static comprobar_imagen_publicacion(){
         
-
         if (validacionesatomicas.size_minimo('imagen_publicacion',7)){
         }
          else{
@@ -578,14 +572,12 @@ class Gestion_publicacion extends GestionEntidad{
              DOM_class.mostrardivmensajeserrordebajo('imagen_publicacion','KO_imagen_publicacion_formato');
              return false;
         }
-    
-    
         
         DOM_class.mostrarexitovalor('imagen_publicacion');
         
         return true;
     }
-    
+
     
     static comprobar_imagen_publicacion_SEARCH(){
     
@@ -602,22 +594,47 @@ class Gestion_publicacion extends GestionEntidad{
         return true;
     }
     
+  
     static comprobar_nuevo_imagen_publicacion(){
-    
-        if(validacionesatomicas.tamano_fichero2('nuevo_imagen_publicacion')){
+
+        if (validacionesatomicas.size_minimo('imagen_publicacion',7)){
         }
-        else{
-             DOM_class.mostrardivmensajeserrordebajo('nuevo_imagen_publicacion','KO_nuevo_imagen_publicacion_tamano');
-             return false;
+         else{
+            if (validacionesatomicas.sizeMinimoImg('nuevo_imagen_publicacion',7)){
+            }
+             else{
+                 //modificacion parametros texto error
+                 DOM_class.mostrardivmensajeserrordebajo('nuevo_imagen_publicacion','KO_nuevo_imagen_publicacion_tam_min');
+                 //salir ejecucion con false
+                 return false;
+            }
+            if (validacionesatomicas.sizeMaximoImg('nuevo_imagen_publicacion',60)){
+            }
+            else{
+                 //modificacion parametros texto error
+                 DOM_class.mostrardivmensajeserrordebajo('nuevo_imagen_publicacion','KO_nuevo_imagen_publicacion_tam_max');
+                 //salir ejecucion con false
+                 return false;
+            }
+            if(validacionesatomicas.validar_TamImagpublicacion('nuevo_imagen_publicacion')){
+            }
+            else{
+                 DOM_class.mostrardivmensajeserrordebajo('nuevo_imagen_publicacion','KO_nuevo_imagen_publicacion_tamano');
+                 return false;
+            }
+            if(validacionesatomicas.validar_imagenPublicacionFormato('nuevo_imagen_publicacion')){
+            }
+            else{
+                 DOM_class.mostrardivmensajeserrordebajo('nuevo_imagen_publicacion','KO_nuevo_imagen_publicacion_formato');
+                 return false;
+            }
         }
-    
+
         DOM_class.mostrarexitovalor('nuevo_imagen_publicacion');
         return true;
-    
     }
     
     
-
     static recargarform(){
 
         document.getElementById("IU_form").innerHTML= '';

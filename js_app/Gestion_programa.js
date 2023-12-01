@@ -68,7 +68,7 @@ class Gestion_programa extends GestionEntidad{
         document.getElementById('label_fichero_programa').style.display = 'none';
         document.getElementById('link_fichero_programa').style.display = 'none';
 
-        document.getElementById('nuevo_fichero_programa').setAttribute('onblur', 'Gestion_programa.comprobar_nuevo_fichero_programa()');
+        document.getElementById('nuevo_fichero_programa').setAttribute('onChange', 'Gestion_programa.comprobar_nuevo_fichero_programa()');
         document.getElementById('nuevo_fichero_programa').style.display = 'block';
 
 
@@ -89,7 +89,7 @@ class Gestion_programa extends GestionEntidad{
         document.getElementById('label_imagen_programa').style.display = 'none';
         document.getElementById('link_imagen_programa').style.display = 'none';
 
-        document.getElementById('nuevo_imagen_programa').setAttribute('onblur','Gestion_programa.comprobar_nuevo_imagen_programa()');
+        document.getElementById('nuevo_imagen_programa').setAttribute('onChange','Gestion_programa.comprobar_nuevo_imagen_programa()');
         document.getElementById('nuevo_imagen_programa').style.display = 'block';
 
 
@@ -107,100 +107,7 @@ class Gestion_programa extends GestionEntidad{
         document.getElementById('div_IU_form').style.display = 'block';
     }
 
-    /*
-    static async createForm_ADD(){
-
-        // resetear el formulario
-        //this.resetearformprograma();
-        this.recargarform();
-        // rellenar titulo formulario
-        
-        document.querySelector(".class_contenido_titulo_form").innerHTML = traduccion["titulo_form_ADD_programa"]; 
-
-        // se rellena el action del formulario
-        document.getElementById('IU_form').action = 'javascript:Gestion_programa.ADD();';
-        document.getElementById('IU_form').setAttribute('onsubmit', 'return Gestion_programa.comprobar_submit();');
-
-        // se coloca el onblur del id_programa y se pone a vacio el valor (o podriamos hacerlo en el resetearformusuario())
-        document.getElementById('id_programa').setAttribute('onblur', 'Gestion_programa.comprobar_id_programa()');
-        document.getElementById('id_programa').value = '';
-
-        // se coloca el onblur del nombre y se pone a vacio el valor (o podriamos hacerlo en el resetearformusuario())
-        document.getElementById('nombre_programa').setAttribute('onblur', 'Gestion_programa.comprobar_nombre_programa()');
-        document.getElementById('nombre_programa').value = '';
-
-        document.getElementById('acronimo_programa').setAttribute('onblur', 'Gestion_programa.comprobar_acronimo_programa()');
-        document.getElementById('acronimo_programa').value = '';
-
-        document.getElementById('nombre_original_programa').setAttribute('onblur','Gestion_programa.comprobar_nombre_original_programa()');
-        document.getElementById('nombre_original_programa').value = '';
-
-        document.getElementById('autor_programa').setAttribute('onblur','Gestion_programa.comprobar_autor_programa()');
-        document.getElementById('autor_programa').value = '';
-
-        document.getElementById('autor_original_programa').setAttribute('onblur','Gestion_programa.comprobar_autor_original_programa()');
-        document.getElementById('autor_original_programa').value = '';
-
-        document.getElementById('ano_programa').setAttribute('onchange','Gestion_programa.comprobar_ano_programa()');
-        document.getElementById('ano_programa').value = '';
-
-        document.getElementById('ano_original_programa').setAttribute('onchange','Gestion_programa.comprobar_ano_original_programa()');
-        document.getElementById('ano_original_programa').value = '';
-
-        document.getElementById('requisitos_programa').setAttribute('onblur','Gestion_programa.comprobar_requisitos_programa()');
-        document.getElementById('requisitos_programa').value = '';
-
-        document.getElementById('poblacion_desde_programa').setAttribute('onblur','Gestion_programa.comprobar_poblacion_desde_programa()');
-        document.getElementById('poblacion_desde_programa').value = '';
-
-        document.getElementById('poblacion_hasta_programa').setAttribute('onblur','Gestion_programa.comprobar_poblacion_hasta_programa()');
-        document.getElementById('poblacion_hasta_programa').value = '';
-
-        document.getElementById('unidad_poblacion').setAttribute('onblur','Gestion_programa.comprobar_unidad_poblacion()');
-        document.getElementById('unidad_poblacion').value = '';
-        
-        document.getElementById('tipo_programa').setAttribute('onblur','Gestion_programa.comprobar_tipo_programa()');
-        document.getElementById('tipo_programa').value = '';
-
-        document.getElementById('tiempo_aplicacion_programa').setAttribute('onblur','Gestion_programa.comprobar_tiempo_aplicacion_programa()');
-        document.getElementById('tiempo_aplicacion_programa').value = '';
-
-        document.getElementById('descrip_interp_programa').setAttribute('onblur','Gestion_programa.comprobar_descrip_interp_programa()');
-        document.getElementById('descrip_interp_programa').value = '';
-
-        document.getElementById('fichero_programa').setAttribute('onblur','Gestion_programa.comprobar_fichero_programa()');
-        document.getElementById('fichero_programa').value = '';
-
-        document.getElementById('enlace_programa').setAttribute('onblur','Gestion_programa.comprobar_enlace_programa()');
-        document.getElementById('enlace_programa').value = '';
-
-        document.getElementById('formato_programa').setAttribute('onblur','Gestion_programa.comprobar_formato_programa()');
-        document.getElementById('formato_programa').value = '';
-
-        document.getElementById('modo_correccion_programa').setAttribute('onblur','Gestion_programa.comprobar_modo_correccion_programa()');
-        document.getElementById('modo_correccion_programa').value = '';
-
-        document.getElementById('modo_aplicacion_programa').setAttribute('onblur','Gestion_programa.comprobar_modo_aplicacion_programa()');
-        document.getElementById('modo_aplicacion_programa').value = '';
-
-        document.getElementById('imagen_programa').setAttribute('onblur','Gestion_programa.comprobar_imagen_programa()');
-        document.getElementById('imagen_programa').value = '';
-
-        let botonadd = document.createElement('button');
-        botonadd.type = 'submit';
-        let imgadd = document.createElement('img');
-        imgadd.src = './iconos/ADD.png';
-        botonadd.append(imgadd);
-        document.getElementById('IU_form').append(botonadd);        
-
-        // para actualizar idioma despues de incluir la imagen
-        setLang();
-
-        // se muestra el formulario
-        document.getElementById('div_IU_form').style.display = 'block';
-    }*/
-
-
+    
     static createForm_EDIT(datostupla) {
 
         // resetear el formulario
@@ -235,7 +142,7 @@ class Gestion_programa extends GestionEntidad{
         
         document.getElementById('fichero_programa').setAttribute('readonly', true);
         document.getElementById('link_fichero_programa').setAttribute('href', 'http://193.147.87.202/ET2/filesuploaded/files_fichero_programa/' + fichero_programa);
-        document.getElementById('nuevo_fichero_programa').setAttribute('onblur', 'Gestion_programa.comprobar_nuevo_fichero_programa()');
+        document.getElementById('nuevo_fichero_programa').setAttribute('onChange', 'Gestion_programa.comprobar_nuevo_fichero_programa()');
         
         document.getElementById('enlace_programa').setAttribute('onblur', 'Gestion_programa.comprobar_enlace_programa()');
         document.getElementById('formato_programa').setAttribute('onblur', 'Gestion_programa.comprobar_formato_programa()');
@@ -244,7 +151,7 @@ class Gestion_programa extends GestionEntidad{
         
         document.getElementById('imagen_programa').setAttribute('readonly', true);
         document.getElementById('link_imagen_programa').setAttribute('href','http://193.147.87.202/ET2/filesuploaded/files_imagen_programa/'+imagen_programa);
-        document.getElementById('nuevo_imagen_programa').setAttribute('onblur','Gestion_programa.comprobar_nuevo_imagen_programa()');        
+        document.getElementById('nuevo_imagen_programa').setAttribute('onChange','Gestion_programa.comprobar_nuevo_imagen_programa()');        
     
         // Rellenar los campos con los valores recibidos
         document.getElementById('nombre_programa').value = datostupla.nombre_programa;
@@ -286,70 +193,12 @@ class Gestion_programa extends GestionEntidad{
     
     
 
-    // createForm_DELETE antiguo
-    /*
-    static createForm_DELETE(datostupla) {
-
-        // resetear el formulario
-        this.recargarform();
-
-        // rellenar titulo formulario
-        document.querySelector(".class_contenido_titulo_form").innerHTML = traduccion["titulo_form_DELETE_programa"]; 
-
-        // se rellena el action del formulario
-        document.getElementById('IU_form').action = 'javascript:Gestion_programa.DELETE();';
-
-        // se coloca el valor del id_programa y se deshabilita la edición (o podríamos hacerlo en el resetearformprograma())
-        document.getElementById('id_programa').value = id_programa;
-        document.getElementById('id_programa').setAttribute("readonly", true);
-
-        // Se llenan los otros campos de la forma análogamente
-        document.getElementById('nombre_programa').value = nombre_programa;
-        document.getElementById('acronimo_programa').value = acronimo_programa;
-        document.getElementById('nombre_original_programa').value = nombre_original_programa;
-        document.getElementById('autor_programa').value = autor_programa;
-        document.getElementById('autor_original_programa').value = autor_original_programa;
-        document.getElementById('ano_programa').value = ano_programa;
-        document.getElementById('ano_original_programa').value = ano_original_programa;
-        document.getElementById('requisitos_programa').value = requisitos_programa;
-        document.getElementById('poblacion_desde_programa').value = poblacion_desde_programa;
-        document.getElementById('poblacion_hasta_programa').value = poblacion_hasta_programa;
-        document.getElementById('unidad_poblacion').value = unidad_poblacion;
-        document.getElementById('tipo_programa').value = tipo_programa;
-        document.getElementById('tiempo_aplicacion_programa').value = tiempo_aplicacion_programa;
-        document.getElementById('descrip_interp_programa').value = descrip_interp_programa;
-        document.getElementById('fichero_programa').value = fichero_programa;
-        document.getElementById('enlace_programa').value = enlace_programa;
-        document.getElementById('formato_programa').value = formato_programa;
-        document.getElementById('modo_correccion_programa').value = modo_correccion_programa;
-        document.getElementById('modo_aplicacion_programa').value = modo_aplicacion_programa;
-        document.getElementById('imagen_programa').value = imagen_programa;
-
-        let botondelete = document.createElement('button');
-        botondelete.id = 'botondelete';
-        botondelete.type = 'submit';
-        let imgdelete = document.createElement('img');
-        imgdelete.src = './iconos/DELETE.png';
-        botondelete.append(imgdelete);
-        document.getElementById('IU_form').append(botondelete);
-
-        // para actualizar idioma 
-        setLang();
-
-        // se muestra el formulario
-        document.getElementById('div_IU_form').style.display = 'block';
-    }
-    */
-
-
     static createForm_DELETE(datostupla) {
         // resetear el formulario
         this.recargarform();
     
         // rellenar titulo formulario
         document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_DELETE_programa";
-        // document.querySelector(".class_contenido_titulo_form").innerHTML = traduccion["titulo_form_DELETE_programa"]; 
-
     
         // se rellena el action del formulario
         document.getElementById('IU_form').action = 'javascript:Gestion_programa.DELETE();';
@@ -526,61 +375,7 @@ class Gestion_programa extends GestionEntidad{
     //-----------------------------------------------------------------------------
     // submits
 
-    /*static comprobar_submit(){
-
-        let valor = this.comprobar_id_programa();
-        let valor1 = this.comprobar_nombre_programa();
-        let valor2 = this.comprobar_acronimo_programa();
-        let valor3 = this.comprobar_nombre_original_programa();
-        let valor4 = this.comprobar_autor_programa();
-        let valor5 = this.comprobar_autor_original_programa();
-        let valor6 = this.comprobar_ano_programa();
-        let valor7 = this.comprobar_ano_original_programa();
-        let valor8 = this.comprobar_requisitos_programa();
-        let valor9 = this.comprobar_poblacion_desde_programa();
-        let valor10 = this.comprobar_poblacion_hasta_programa();
-        let valor11 = this.comprobar_unidad_poblacion();
-        let valor12 = this.comprobar_tipo_programa();
-        let valor13 = this.comprobar_tiempo_aplicacion_programa();
-        let valor14 = this.comprobar_descrip_interp_programa();
-        // let valor15 = this.comprobar_fichero_programa();
-        let valor15 = this.comprobar_nuevo_fichero_programa();
-        let valor16 = this.comprobar_enlace_programa();
-        let valor17 = this.comprobar_formato_programa();
-        let valor18 = this.comprobar_modo_correccion_programa();
-        let valor19 = this.comprobar_modo_aplicacion_programa();
-        // let valor20 = this.comprobar_imagen_programa();
-        let valor20 = this.comprobar_nuevo_imagen_programa();
-        //let valor20 = this.comprobar_nuevo_fichero_programa();
     
-        let resultado = (
-            valor &&
-            valor1 &&
-            valor2 &&
-            valor3 &&
-            valor4 &&
-            valor5 &&
-            valor6 &&
-            valor7 &&
-            valor8 &&
-            valor9 &&
-            valor10 &&
-            valor11 &&
-            valor12 &&
-            valor13 &&
-            valor14 &&
-            valor15 &&
-            valor16 &&
-            valor17 &&
-            valor18 &&
-            valor19 &&
-            valor20
-        );
-    
-        return resultado;
-    }*/
-
-
     static comprobar_submit(){
 
         let valor = this.comprobar_id_programa();
@@ -598,12 +393,12 @@ class Gestion_programa extends GestionEntidad{
         let valor12 = this.comprobar_tipo_programa();
         let valor13 = this.comprobar_tiempo_aplicacion_programa();
         let valor14 = this.comprobar_descrip_interp_programa();
-        let valor15 = this.comprobar_fichero_programa();
+        let valor15 = this.comprobar_nuevo_fichero_programa();
         let valor16 = this.comprobar_enlace_programa();
         let valor17 = this.comprobar_formato_programa();
         let valor18 = this.comprobar_modo_correccion_programa();
         let valor19 = this.comprobar_modo_aplicacion_programa();
-        let valor20 = this.comprobar_imagen_programa();
+        let valor20 = this.comprobar_nuevo_imagen_programa();
     
         let resultado = (
             valor &&
@@ -1435,13 +1230,6 @@ class Gestion_programa extends GestionEntidad{
              return false;
         }
 
-        /*if(validacionesatomicas.tamano_fichero('fichero_programa')){
-        }
-        else{
-             DOM_class.mostrardivmensajeserrordebajo('fichero_programa','KO_fichero_programa_tamano');
-             return false;
-        }*/
-        
         DOM_class.mostrarexitovalor('fichero_programa');
         return true;
     }
@@ -1462,16 +1250,42 @@ class Gestion_programa extends GestionEntidad{
     }
 
     static comprobar_nuevo_fichero_programa(){
-        if(validacionesatomicas.tamano_fichero('nuevo_fichero_programa')){
-        }
-        else{
-             DOM_class.mostrardivmensajeserrordebajo('nuevo_fichero_programa','KO_nuevo_fichero_programa_tamano');
-             return false;
-        }
         
+        if (validacionesatomicas.size_minimo('fichero_programa',7)){
+        }
+         else{
+            if (validacionesatomicas.sizeMinimoImg('nuevo_fichero_programa',7)){
+            }
+             else{
+                 //modificacion parametros texto error
+                 DOM_class.mostrardivmensajeserrordebajo('nuevo_fichero_programa','KO_nuevo_fichero_programa_tam_min');
+                 //salir ejecucion con false
+                 return false;
+            }
+            if (validacionesatomicas.sizeMaximoImg('nuevo_fichero_programa',60)){
+            }
+            else{
+                 //modificacion parametros texto error
+                 DOM_class.mostrardivmensajeserrordebajo('nuevo_fichero_programa','KO_nuevo_fichero_programa_tam_max');
+                 //salir ejecucion con false
+                 return false;
+            }
+            if(validacionesatomicas.validar_TamFichero('nuevo_fichero_programa')){
+            }
+            else{
+                 DOM_class.mostrardivmensajeserrordebajo('nuevo_fichero_programa','KO_nuevo_fichero_programa_tamano');
+                 return false;
+            }
+            if(validacionesatomicas.validar_ficheroFormato('nuevo_fichero_programa')){
+            }
+            else{
+                 DOM_class.mostrardivmensajeserrordebajo('nuevo_fichero_programa','KO_nuevo_fichero_programa_formato');
+                 return false;
+            }
+        }
+ 
         DOM_class.mostrarexitovalor('nuevo_fichero_programa');
         return true;
-
     }
 
     static comprobar_enlace_programa(){
@@ -1573,7 +1387,7 @@ class Gestion_programa extends GestionEntidad{
     static comprobar_modo_aplicacion_programa_SEARCH(){
         return true;
     }
-    
+
 
     static comprobar_imagen_programa(){
 
@@ -1601,13 +1415,6 @@ class Gestion_programa extends GestionEntidad{
              DOM_class.mostrardivmensajeserrordebajo('imagen_programa','KO_imagen_programa_formato');
              return false;
         }
-
-        /*if(validacionesatomicas.tamano_fichero2('imagen_programa')){
-        }
-        else{
-             DOM_class.mostrardivmensajeserrordebajo('imagen_programa','KO_imagen_programa_tamano');
-             return false;
-        }*/
         
         DOM_class.mostrarexitovalor('imagen_programa');
         return true;
@@ -1630,16 +1437,41 @@ class Gestion_programa extends GestionEntidad{
 
     static comprobar_nuevo_imagen_programa(){
 
-        if(validacionesatomicas.tamano_fichero2('nuevo_imagen_programa')){
+        if (validacionesatomicas.size_minimo('imagen_programa',7)){
         }
-        else{
-             DOM_class.mostrardivmensajeserrordebajo('nuevo_imagen_programa','KO_nuevo_imagen_programa_tamano');
-             return false;
+         else{
+            if (validacionesatomicas.sizeMinimoImg('nuevo_imagen_programa',7)){
+            }
+             else{
+                 //modificacion parametros texto error
+                 DOM_class.mostrardivmensajeserrordebajo('nuevo_imagen_programa','KO_nuevo_imagen_programa_tam_min');
+                 //salir ejecucion con false
+                 return false;
+            }
+            if (validacionesatomicas.sizeMaximoImg('nuevo_imagen_programa',60)){
+            }
+            else{
+                 //modificacion parametros texto error
+                 DOM_class.mostrardivmensajeserrordebajo('nuevo_imagen_programa','KO_nuevo_imagen_programa_tam_max');
+                 //salir ejecucion con false
+                 return false;
+            }
+            if(validacionesatomicas.validar_TamImagpublicacion('nuevo_imagen_programa')){
+            }
+            else{
+                 DOM_class.mostrardivmensajeserrordebajo('nuevo_imagen_programa','KO_nuevo_imagen_programa_tamano');
+                 return false;
+            }
+            if(validacionesatomicas.validar_imagenPublicacionFormato('nuevo_imagen_programa')){
+            }
+            else{
+                 DOM_class.mostrardivmensajeserrordebajo('nuevo_imagen_programa','KO_nuevo_imagen_programa_formato');
+                 return false;
+            }
         }
 
         DOM_class.mostrarexitovalor('nuevo_imagen_programa');
         return true;
-
     }
 
 
@@ -1707,6 +1539,7 @@ class Gestion_programa extends GestionEntidad{
     
         <label class="label_unidad_poblacion">Unidad de Población</label>
         <select id="unidad_poblacion" name="unidad_poblacion">
+            <option value="">Selecciona una opción</option>
             <option value="MESES">Meses</option>
             <option value="AÑOS">Años</option>
         </select>
@@ -1715,6 +1548,7 @@ class Gestion_programa extends GestionEntidad{
 
         <label class="label_tipo_programa">Tipo de Programa</label>
         <select id="tipo_programa" name="tipo_programa">
+            <option value="">Selecciona una opción</option>
             <option value="EVALUACIÓN">Evaluación</option>
             <option value="INTERVENCIÓN">Intervención</option>
             <option value="EVALUACIÓN E INTERVENCIÓN">Evaluación e Intervención</option>
@@ -1728,9 +1562,10 @@ class Gestion_programa extends GestionEntidad{
         <br>
     
         <label class="label_descrip_interp_programa">Descripción e Interpretación del Programa</label>
-        <input type='text' id='descrip_interp_programa' name='descrip_interp_programa'></input>
+        <textarea id='descrip_interp_programa' name='descrip_interp_programa'></textarea>
         <div id="div_error_descrip_interp_programa" class="errorcampo"><a id="error_descrip_interp_programa"></a></div>
         <br>
+
     
         <label id="label_fichero_programa" class="label_fichero_programa">Foto Persona</label>
         <input type='text' id='fichero_programa' name='fichero_programa'></input>
@@ -1747,6 +1582,7 @@ class Gestion_programa extends GestionEntidad{
     
         <label class="label_formato_programa">Formato del Programa</label>
         <select id="formato_programa" name="formato_programa">
+            <option value="">Selecciona una opción</option>
             <option value="PAPEL">Papel</option>
             <option value="ELECTRÓNICO">Electrónico</option>
             <option value="PAPEL Y ELECTRÓNICO">Papel y Electrónico</option>
@@ -1756,6 +1592,7 @@ class Gestion_programa extends GestionEntidad{
 
         <label class="label_modo_correccion_programa">Modo de Corrección del Programa</label>
         <select id="modo_correccion_programa" name="modo_correccion_programa">
+            <option value="">Selecciona una opción</option>
             <option value="PAPEL">Papel</option>
             <option value="ELECTRÓNICO">Electrónico</option>
             <option value="PAPEL Y ELECTRÓNICO">Papel y Electrónico</option>
@@ -1765,6 +1602,7 @@ class Gestion_programa extends GestionEntidad{
 
         <label class="label_modo_aplicacion_programa">Modo de Aplicación del Programa</label>
         <select id="modo_aplicacion_programa" name="modo_aplicacion_programa">
+          <option value="">Selecciona una opción</option>
           <option value="INDIVIDUAL">Individual</option>
           <option value="COLECTIVO">Colectivo</option>
           <option value="INDIVIDUAL Y COLECTIVO">Individual y Colectivo</option>
@@ -1784,16 +1622,6 @@ class Gestion_programa extends GestionEntidad{
       
 
         `;
-
-        //<input type="submit" id='id_submit' value="" />
-
-        /**
-         *   <label class="imagen_programa">Nombre de la Imagen del Programa</label>
-            <input type='text' id='imagen_programa' name='imagen_programa'></input>
-            <div id="div_error_imagen_programa" class="errorcampo"><a id="error_imagen_programa"></a></div>
-
-              
-        */
 
         //obtener campos del formulario
         let campos = document.forms['IU_form'].elements;

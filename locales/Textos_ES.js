@@ -68,7 +68,7 @@ let textos_ES={
     
     
     // titulo general pagina programa
-    'titulo_pagina_programas':'Gestión de Programas',
+    'titulo_pagina_programa':'Gestión de Programas',
     
 
     // titulos formularios acciones programas
@@ -177,7 +177,10 @@ let textos_ES={
     "KO_fichero_programa_actual":"Año programa peta actual",
 
     // nuevo_fichero_programa
-    "KO_nuevo_fichero_programa_tamano":"Nuevo fichero programa peta tamaño",
+    "KO_nuevo_fichero_programa_tamano": "Nuevo fichero programa excede tamaño permitido fichero",
+    "KO_nuevo_fichero_programa_tam_min": "Nuevo fichero programa no cumple tamaño mínimo",
+    "KO_nuevo_fichero_programa_tam_max": "Nuevo fichero programa excede tamaño máximo",
+    "KO_nuevo_fichero_programa_formato": "Nuevo fichero programa formato no válido",
 
     // enlace_programa
     "KO_enlace_programa_tam_min":"Enlace programa peta mínimo",
@@ -210,7 +213,10 @@ let textos_ES={
     "KO_imagen_programa_actual":"Año programa peta actual",
 
     // nuevo_imagen_programa
-    "KO_nuevo_imagen_programa_tamano":"Nuevo imagen programa peta tamaño",
+    "KO_nuevo_imagen_programa_tamano": "Nuevo imagen programa excede tamaño permitido imagen",
+    "KO_nuevo_imagen_programa_tam_min": "Nuevo imagen programa no cumple tamaño mínimo",
+    "KO_nuevo_imagen_programa_tam_max": "Nuevo imagen programa excede tamaño máximo",
+    "KO_nuevo_imagen_programa_formato": "Nuevo imagen programa formato no válido",
 
 
 
@@ -247,7 +253,7 @@ let textos_ES={
     'label_nuevo_imagen_publicacion': 'Seleccione Nueva Imagen de la Publicación: ',
 
 // titulo general pagina publicacion
-    'titulo_pagina_programas' : 'Gestión de Publicaciones',
+    'titulo_pagina_publicacion' : 'Gestión de Publicaciones',
 
 // titulos formularios acciones publicacion
 
@@ -302,7 +308,10 @@ let textos_ES={
     "KO_imagen_publicacion_actual": "Año publicación peta actual",
 
     // nuevo_imagen_publicacion
-    "KO_nuevo_imagen_publicacion_tamano": "Nuevo imagen publicación peta tamaño",
+    "KO_nuevo_imagen_publicacion_tamano": "Nuevo imagen publicación peta tamaño imagen",
+    "KO_nuevo_imagen_publicacion_tam_min": "Nuevo imagen publicación peta tamaño minimo",
+    "KO_nuevo_imagen_publicacion_tam_max": "Nuevo imagen publicación peta tamaño maximo", 
+    "KO_nuevo_imagen_publicacion_formato": "Nuevo imagen publicación peta formato",
 };
 
 

@@ -4,17 +4,6 @@ class validacionesatomicas{
 
     }
 
-    /*static validar_dni(id,valor=null){
-        let dni = document.getElementById(id);
-        let condicion = true;
-        if (condicion) {
-            return true;
-        }
-        else{
-            return false;
-        }
-    }*/
-
     static size_minimo(id, valorminimo){
         if (document.getElementById(id).value.length < valorminimo){
             return false;
@@ -103,40 +92,180 @@ class validacionesatomicas{
         }
     }
     
-
-    /*
-    static tamano_fichero(id){
-        if (document.getElementById(id).files[0].size > 2000000){
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
-    */
-
     // funcion para comprobar que el tamaño de fichero menor de 20000 bytes
     static tamano_fichero2(id) {
         const elemento = document.getElementById(id);
-    
+        console.log(elemento.files[0]);
         if (elemento && elemento.files && elemento.files[0]) {
             return elemento.files[0].size <= 200000;
         }else{
     
         return false;
+        }
     }
+
+    static validar_TamFichero(id) {
+        // Obtener el elemento de entrada de archivos por su ID
+        var inputFile = document.getElementById(id);
+      
+        // Verificar si el elemento existe
+        if (!inputFile) {
+          return false;
+        }
+      
+        // Obtener la lista de archivos seleccionados
+        var files = inputFile.files;
+      
+        // Verificar si se seleccionó al menos un archivo
+        if (files.length === 0) {
+          return false;
+        }
+      
+        // Obtener el primer archivo de la lista
+        var file = files[0];
+      
+        // Verificar el tamaño del archivo (menor de 2000000  bytes)
+        if (file.size > 2000000) {
+          return false;
+        }
+      
+        // Si se pasan todas las validaciones, el archivo es válido
+        return true;
     }
+
+    static validar_ficheroFormato(id){
+        var inputFile = document.getElementById(id);
+      
+        // Verificar si el elemento existe
+        if (!inputFile) {
+          return false;
+        }
+      
+        // Obtener la lista de archivos seleccionados
+        var files = inputFile.files;
+      
+        // Verificar si se seleccionó al menos un archivo
+        if (files.length === 0) {
+          return false;
+        }
+      
+        // Obtener el primer archivo de la lista
+        var file = files[0];
+      
+        // Verificar el formato del nombre del archivo (alfabéticos sin acentos ni ñ ni espacios)
+        var nombreArchivo = file.name.replace(/[^a-zA-Z0-9._-]/g, ''); // Eliminar caracteres no permitidos
+        var formatoValido = /^[a-zA-Z0-9_-]{7,60}\.(pdf|docx?|PDF|DOCX?)$/i.test(nombreArchivo);
+
+      
+        if (!formatoValido) {
+          return false;
+        }
+      
+        // Si se pasan todas las validaciones, el archivo es válido
+        return true;
         
-    /*
-    static tamano_fichero2(id){
-        if (document.getElementById(id).files[0].size > 20000){
-            return false;
+    }
+
+    static validar_imagenPublicacionFormato(id){
+        var inputFile = document.getElementById(id);
+      
+        // Verificar si el elemento existe
+        if (!inputFile) {
+          return false;
         }
-        else{
-            return true;
+      
+        // Obtener la lista de archivos seleccionados
+        var files = inputFile.files;
+      
+        // Verificar si se seleccionó al menos un archivo
+        if (files.length === 0) {
+          return false;
+        }
+      
+        // Obtener el primer archivo de la lista
+        var file = files[0];
+      
+        // Verificar el formato del nombre del archivo (alfabéticos sin acentos ni ñ ni espacios)
+        var nombreArchivo = file.name.replace(/\s+/g, ''); // Eliminar espacios
+        var formatoValido = /^[a-zA-Z]+\.(jpe?g)$/i.test(nombreArchivo);
+      
+        if (!formatoValido) {
+          return false;
+        }
+      
+        // Si se pasan todas las validaciones, el archivo es válido
+        return true;
+        
+    }
+
+
+    static validar_TamImagpublicacion(id) {
+        // Obtener el elemento de entrada de archivos por su ID
+        var inputFile = document.getElementById(id);
+      
+        // Verificar si el elemento existe
+        if (!inputFile) {
+          return false;
+        }
+      
+        // Obtener la lista de archivos seleccionados
+        var files = inputFile.files;
+      
+        // Verificar si se seleccionó al menos un archivo
+        if (files.length === 0) {
+          return false;
+        }
+      
+        // Obtener el primer archivo de la lista
+        var file = files[0];
+      
+        // Verificar el tamaño del archivo (menor de 20000 bytes)
+        if (file.size > 20000) {
+          return false;
+        }
+      
+        // Si se pasan todas las validaciones, el archivo es válido
+        return true;
+    }
+
+    static sizeMinimoImg(id, valorminimo) {
+        var fileInput = document.getElementById(id);
+      
+        // Verificar si se seleccionó al menos un archivo
+        if (fileInput.files.length === 0) {
+          return false;
+        }
+      
+        // Obtener el primer archivo de la lista
+        var file = fileInput.files[0];
+      
+        // Verificar el tamaño mínimo del nombre del archivo
+        if (file.name.length < valorminimo) {
+          return false;
+        } else {
+          return true;
         }
     }
-    */
+      
+    static sizeMaximoImg(id, valormaximo) {
+        var fileInput = document.getElementById(id);
+      
+        // Verificar si se seleccionó al menos un archivo
+        if (fileInput.files.length === 0) {
+          return false;
+        }
+      
+        // Obtener el primer archivo de la lista
+        var file = fileInput.files[0];
+      
+        // Verificar el tamaño máximo del nombre del archivo
+        if (file.name.length > valormaximo) {
+          return false;
+        } else {
+          return true;
+        }
+    }
+      
 
     // funcion para validar enlace_programa solo alfabéticos y : y / y . sin acentos ni ñ ni espacios 
     static enlace_programa(id){

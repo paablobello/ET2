@@ -10,7 +10,8 @@ class Gestion_programa extends GestionEntidad{
         this.recargarform();
         // rellenar titulo formulario
         
-        document.querySelector(".class_contenido_titulo_form").innerHTML = traduccion["titulo_form_ADD_programa"]; 
+        document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_ADD_programa";
+        //document.querySelector(".class_contenido_titulo_form").innerHTML = traduccion["titulo_form_ADD_programa"]; 
 
         // se rellena el action del formulario
         document.getElementById('IU_form').action = 'javascript:Gestion_programa.ADD();';
@@ -299,10 +300,11 @@ class Gestion_programa extends GestionEntidad{
 
         // rellenar titulo del formulario
         document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_SHOWCURRENT_programa";
-        // document.querySelector(".class_contenido_titulo_form").innerHTML = traduccion["titulo_form_SHOWCURRENT_programa"]; 
 
         // eliminar boton delete del form DELETE
         document.getElementById('botondelete').remove();
+
+        // document.getElementById('unidad_poblacion').disabled=true;
 
         // se rellena el action del formulario
         let imgshowcurrent = document.createElement('img');
@@ -1251,7 +1253,7 @@ class Gestion_programa extends GestionEntidad{
 
     static comprobar_nuevo_fichero_programa(){
         
-        if (validacionesatomicas.size_minimo('fichero_programa',7)){
+        if (validacionesatomicas.size_minimo('fichero_programa',7) && validacionesatomicas.validarNulo('nuevo_fichero_programa')){
         }
          else{
             if (validacionesatomicas.sizeMinimoImg('nuevo_fichero_programa',7)){
@@ -1437,7 +1439,7 @@ class Gestion_programa extends GestionEntidad{
 
     static comprobar_nuevo_imagen_programa(){
 
-        if (validacionesatomicas.size_minimo('imagen_programa',7)){
+        if (validacionesatomicas.size_minimo('imagen_programa',7) && validacionesatomicas.validarNulo('nuevo_imagen_programa')){
         }
          else{
             if (validacionesatomicas.sizeMinimoImg('nuevo_imagen_programa',7)){
@@ -1473,6 +1475,45 @@ class Gestion_programa extends GestionEntidad{
         DOM_class.mostrarexitovalor('nuevo_imagen_programa');
         return true;
     }
+
+    /*static comprobar_nuevo_imagen_programa() {
+
+
+        // Manejar el evento click del elemento con ID 'nuevo_imagen_publicacion'
+
+        if (validacionesatomicas.sizeMinimoImg('nuevo_imagen_programa', 7)) {
+        } else {
+            //modificacion parametros texto error
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_imagen_programa', 'KO_nuevo_imagen_programa_tam_min');
+            //salir ejecucion con false
+            return false;
+        }
+        if (validacionesatomicas.sizeMaximoImg('nuevo_imagen_programa', 60)) {
+        } else {
+            //modificacion parametros texto error
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_imagen_programa', 'KO_nuevo_imagen_programa_tam_max');
+            //salir ejecucion con false
+            return false;
+        }
+        if (validacionesatomicas.validar_TamImagpublicacion('nuevo_imagen_programa')) {
+
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_imagen_programa', 'KO_nuevo_imagen_programa_tamano');
+            return false;
+        }
+        if (validacionesatomicas.validar_imagenPublicacionFormato('nuevo_imagen_programa')) {
+
+        } else {
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_imagen_programa', 'KO_nuevo_imagen_programa_formato');
+            return false;
+        }
+
+        DOM_class.mostrarexitovalor('nuevo_imagen_programa');
+
+
+        return true;
+    }*/
+    
 
 
 
@@ -1610,7 +1651,7 @@ class Gestion_programa extends GestionEntidad{
         <div id="div_error_modo_aplicacion_programa" class="errorcampo"><a id="error_modo_aplicacion_programa"></a></div>
         <br>
 
-        <label id="label_imagen_programa" class="label_imagen_programa">Foto Persona</label>
+        <label id="label_imagen_programa" class="label_imagen_programa">Foto Programa</label>
         <input type='text' id='imagen_programa' name='imagen_programa'></input>
         <a id="link_imagen_programa" href="http://193.147.87.202/ET2/filesuploaded/files_imagen_programa/"><img src="./iconos/FILE.png" /></a>
 

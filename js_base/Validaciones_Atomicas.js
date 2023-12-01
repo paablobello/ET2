@@ -354,5 +354,39 @@ class validacionesatomicas{
             return false;
         }
     }
+
+    static validarFecha(id){
+     
+        let patron = /^\d{4}-\d{2}-\d{2}$/;
+
+        if (!patron.test(document.getElementById(id).value)){
+            return false;
+        }
+
+        let fechaActual = new Date();
+        let fecha = new Date(document.getElementById(id).value);
+
+        if (fecha >= (fechaActual.setDate(fechaActual.getDate() - 1))){
+            return true;
+        }
+
+        return false;
+    }
+
+
     
+    static validarNulo(id) {
+
+        var fileInput = document.getElementById(id);
+        // Obtener el primer archivo de la lista
+        var file = fileInput.files[0];
+
+        // Verificar el tamaño mínimo del nombre del archivo
+        if ((file.name.length == 0) || (document.getElementById(id).value === null)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

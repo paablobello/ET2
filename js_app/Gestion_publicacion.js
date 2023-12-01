@@ -10,7 +10,9 @@ class Gestion_publicacion extends GestionEntidad{
         this.recargarform();
         
         // Rellenar título formulario
-        document.querySelector(".class_contenido_titulo_form").innerHTML = traduccion["titulo_form_ADD_publicacion"]; 
+        //document.querySelector(".class_contenido_titulo_form").innerHTML = traduccion["titulo_form_ADD_publicacion"]; 
+        document.querySelector(".class_contenido_titulo_form").className = "class_contenido_titulo_form titulo_form_ADD_publicacion";
+
     
         // Se rellena el action del formulario
         document.getElementById('IU_form').action = 'javascript:Gestion_publicacion.ADD();';
@@ -455,6 +457,14 @@ class Gestion_publicacion extends GestionEntidad{
 
 
     static comprobar_fecha_publicacion() {
+
+        if (validacionesatomicas.validarFecha('fecha_publicacion')){
+        }
+        else{
+            //modificacion parametros texto error
+            DOM_class.mostrardivmensajeserrordebajo('fecha_publicacion','KO_fecha_publicacion_actual');
+            return false;
+        }
         DOM_class.mostrarexitovalor('fecha_publicacion');
         return true;
     }
@@ -597,7 +607,7 @@ class Gestion_publicacion extends GestionEntidad{
   
     static comprobar_nuevo_imagen_publicacion(){
 
-        if (validacionesatomicas.size_minimo('imagen_publicacion',7)){
+        if (validacionesatomicas.size_minimo('imagen_publicacion',7)  && validacionesatomicas.validarNulo('nuevo_imagen_publicacion')){
         }
          else{
             if (validacionesatomicas.sizeMinimoImg('nuevo_imagen_publicacion',7)){
@@ -633,6 +643,37 @@ class Gestion_publicacion extends GestionEntidad{
         DOM_class.mostrarexitovalor('nuevo_imagen_publicacion');
         return true;
     }
+
+    /*static comprobar_nuevo_imagen_publicacion() {
+
+        if (validacionesatomicas.sizeMinimoImg('nuevo_imagen_publicacion', 7)) {} else {
+            //modificacion parametros texto error
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_imagen_publicacion', 'KO_nuevo_imagen_publicacion_tam_min');
+            //salir ejecucion con false
+            return false;
+        }
+        if (validacionesatomicas.sizeMaximoImg('nuevo_imagen_publicacion', 60)) {} else {
+            //modificacion parametros texto error
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_imagen_publicacion', 'KO_nuevo_imagen_publicacion_tam_max');
+            //salir ejecucion con false
+            return false;
+        }
+        if (validacionesatomicas.validar_TamImagpublicacion('nuevo_imagen_publicacion')) {} else {
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_imagen_publicacion', 'KO_nuevo_imagen_publicacion_tamano');
+            return false;
+        }
+        if (validacionesatomicas.validar_imagenPublicacionFormato('nuevo_imagen_publicacion')) {} else {
+            DOM_class.mostrardivmensajeserrordebajo('nuevo_imagen_publicacion', 'KO_nuevo_imagen_publicacion_formato');
+            return false;
+        }
+
+        DOM_class.mostrarexitovalor('nuevo_imagen_publicacion');
+        return true;
+
+    }*/
+
+
+    
     
     
     static recargarform(){

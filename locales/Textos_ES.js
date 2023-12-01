@@ -287,7 +287,7 @@ let textos_ES={
     "KO_fecha_publicacion_tam_min": "Fecha publicación peta mínimo",
     "KO_fecha_publicacion_tam_max": "Fecha publicación peta máximo",
     "KO_fecha_publicacion_formato": "Fecha publicación peta formato",
-    "KO_fecha_publicacion_actual": "Año publicación peta actual",
+    "KO_fecha_publicacion_actual": "Año publicación no puede tener fecha pasada",
 
     // area_publicacion
     "KO_area_publicacion_tam_min": "Área publicación peta mínimo",
